@@ -1,4 +1,8 @@
+#--------------------------------
+
+# Imports
 import numpy as np
+#--------------------------------
 
 """ Define the simple tensor network:
 ###     x1=0 ---2--- x2=0
@@ -15,6 +19,7 @@ F = np.array([
     [1, 2]
 ]) # rank 2 tensor (just a matrix)
 
+# Explicity compute Z: partition function contraction
 Z = 0
 for x1 in range(2):
     for x2 in range(2):
@@ -39,6 +44,8 @@ network = "ab,bc,cd,da->"
 Each weight is the product of the four factors F around the square, used as:
 ###     P(x) = weight(x) / Z
 """
+
+# Compute Z in the same way, but on a defined network
 Z = np.einsum(network, *tensors)
 print("Z from network:", Z)
 
@@ -51,12 +58,15 @@ For a single connection between two variables: x1 -- x2
 ###     where:
 ###         message_{1 -> 2} (0) = sum(F(x1, 0))
 """
+
+# Compute Z with BP, simple 2 node example
 m_0 = sum(F[x1, 0] for x1 in range(2))
 print("m_1to2_at0: ", m_0)
 m_1 = sum(F[x1, 1] for x1 in range(2))
 print("m_1to2_at1: ", m_1)
 Z_1to2 = m_0 + m_1
 print("Z for two variables with one connection: ", Z_1to2)
+#--------------------------------
 
 """ Belief propagation:
 A BP message tells a neighboring variable how much the entire network on the sending
@@ -69,6 +79,8 @@ Considering a chain of three connected variables: x1 -- x2 -- x3
 ###     where:
 ###         message_{2 -> 3} (0) = message_{1 -> 2}(0)*F(0,0) + message_{1 -> 2}(1)*F(1,0)
 """
+
+# Compute Z with BP, simple 3 node example
 m_1to2 = [
     sum(F[x1, x2] for x1 in range(2))
     for x2 in range(2)
@@ -82,3 +94,4 @@ Z = sum(m_2to3)
 print("m_1to2:", m_1to2)
 print("m_2to3:", m_2to3)
 print("Z for a chain of three connected variables: ", Z)
+#--------------------------------
