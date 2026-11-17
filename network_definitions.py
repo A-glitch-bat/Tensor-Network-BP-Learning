@@ -20,7 +20,7 @@ F = np.array([
 ])
 
 """ Define a few small example networks.
-###     Tree:        0 - 1 - 2
+###     Tree:     0 - 1 - 2
 ###                    \
 ###                     3
 ###
@@ -29,8 +29,8 @@ F = np.array([
 ###                  3 - 2
 ###
 ###     Multiple loops: 0 - 1
-###                      | \ |
-###                      3 - 2
+###                     | \ |
+###                     3 - 2
 ###
 Each graph is described by its number of variables and its undirected edges.
 """

@@ -21,7 +21,9 @@ for name, network in networks.items():
     edges = network["edges"]
 
     Z_exact = exact_partition_function(n, edges, F)
-    messages, converged, iterations = run_bp(n, edges, F)
+    messages, converged, iterations = run_bp(
+        n, edges, F, initType="random", seed=42
+        )
     Z_bethe = bethe_partition_function(n, edges, F, messages)
 
     relative_error = abs(Z_exact - Z_bethe) / Z_exact
