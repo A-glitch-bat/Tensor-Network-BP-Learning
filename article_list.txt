@@ -1,0 +1,27 @@
+@ARTICLE{1459044,
+  author={Yedidia, J.S. and Freeman, W.T. and Weiss, Y.},
+  journal={IEEE Transactions on Information Theory}, 
+  title={Constructing free-energy approximations and generalized belief propagation algorithms}, 
+  year={2005},
+  volume={51},
+  number={7},
+  pages={2282-2312},
+  keywords={Belief propagation;Inference algorithms;Computer vision;Approximation algorithms;Clustering algorithms;Computer errors;Codes;Artificial intelligence;Physics computing;Probability;Belief propagation (BP);Bethe free energy;cluster variation method;generalized belief propagation (GBP);Kikuchi free energy;message passing;sum–product algorithm},
+  doi={10.1109/TIT.2005.850085}
+}
+
+@article{PRXQuantum.5.010308,
+  title = {Efficient Tensor Network Simulation of IBM's Eagle Kicked Ising Experiment},
+  author = {Tindall, Joseph and Fishman, Matthew and Stoudenmire, E. Miles and Sels, Dries},
+  journal = {PRX Quantum},
+  volume = {5},
+  issue = {1},
+  pages = {010308},
+  numpages = {16},
+  year = {2024},
+  month = {Jan},
+  publisher = {American Physical Society},
+  doi = {10.1103/PRXQuantum.5.010308},
+  url = {https://link.aps.org/doi/10.1103/PRXQuantum.5.010308}
+}
+
