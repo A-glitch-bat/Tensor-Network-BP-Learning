@@ -12,7 +12,7 @@ from belief_propagation import (
 #--------------------------------
 
 strengths = [1.0, 1.5, 2.0, 3.0, 5.0, 10.0]
-seeds = range(30)
+seeds = range(10)
 results = []
 
 for name, network in networks.items():
